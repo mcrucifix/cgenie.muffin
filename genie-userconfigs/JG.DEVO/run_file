@@ -1,0 +1,44 @@
+# Run the main config simulations
+
+	./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.main_config.SPIN 10000
+
+# Run the AF experiment
+
+	./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.003_037_0.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.003_037_45.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.003_037_90.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.003_037_135.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.003_037_180.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.003_037_225.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.003_037_270.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.003_037_315.SPIN 10000
+
+	#./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.006_037_0.SPIN 10000
+	./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.006_037_45.SPIN 10000
+	#./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.006_037_90.SPIN 10000
+	./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.006_037_135.SPIN 10000
+	#./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.006_037_180.SPIN 10000
+	./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.006_037_225.SPIN 10000
+	#./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.006_037_270.SPIN 10000
+	./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.006_037_315.SPIN 10000
+
+	./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.003_041_0.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.003_041_45.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.003_041_90.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.003_041_135.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.003_041_180.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.003_041_225.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.003_041_270.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.003_041_315.SPIN 10000
+
+	./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.006_041_0.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.006_041_45.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.006_041_90.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.006_041_135.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.006_041_180.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.006_041_225.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.006_041_270.SPIN 10000
+        ./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO JG.Scot390M.006_041_315.SPIN 10000
+
+
+

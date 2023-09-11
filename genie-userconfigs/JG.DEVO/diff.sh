@@ -1,0 +1,16 @@
+diff JG.Scot390M.main_config.SPIN JG.Scot390M.006_041_0.SPIN
+echo -e "----------------------------------------------------";
+diff JG.Scot390M.main_config.SPIN JG.Scot390M.006_041_45.SPIN
+echo -e "----------------------------------------------------";
+diff JG.Scot390M.main_config.SPIN JG.Scot390M.006_041_90.SPIN
+echo -e "----------------------------------------------------";
+diff JG.Scot390M.main_config.SPIN JG.Scot390M.006_041_135.SPIN
+echo -e "----------------------------------------------------";
+diff JG.Scot390M.main_config.SPIN JG.Scot390M.006_041_180.SPIN
+echo -e "----------------------------------------------------";
+diff JG.Scot390M.main_config.SPIN JG.Scot390M.006_041_225.SPIN
+echo -e "----------------------------------------------------";
+diff JG.Scot390M.main_config.SPIN JG.Scot390M.006_041_270.SPIN
+echo -e "----------------------------------------------------";
+diff JG.Scot390M.main_config.SPIN JG.Scot390M.006_041_315.SPIN
+echo -e "----------------------------------------------------";
