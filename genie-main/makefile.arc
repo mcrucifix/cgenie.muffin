@@ -60,13 +60,13 @@ ifeq ($(NIGHTLYBUILD2),TRUE)
 endif
 
 # === Ancillary Tools ===
-PYTHON = python
+PYTHON = python2
 PERL   = perl
 ETAGS  = etags
 TAGFILE=$(MAIN_DIR)/TAGS
 
 # == seeding ===
-FFLAGS=$(GENIE_FFLAGS) $(NETCDF_INC)  -fbounds-check
+FFLAGS=$(GENIE_FFLAGS) $(NETCDF_INC)
 F77FLAGS=$(GENIE_F77FLAGS)
 F90FLAGS=$(GENIE_F90FLAGS)
 CPPFLAGS=$(GENIE_CPPFLAGS)
@@ -315,7 +315,7 @@ ifeq ($(F77),gfortran)
   FLAGI8=-fdefault-integer-8
   F77FLAGS += -x f77-cpp-input -ffixed-line-length-80
   F90FLAGS += -x f95-cpp-input -ffree-line-length-none
-  FFLAGS += -Wall -fimplicit-none
+  FFLAGS += -Wall -fimplicit-none -fallow-argument-mismatch
   FFLAGS += -fopenmp
 ###  LDFLAGS += -static
   LDFLAGS += -fopenmp
@@ -540,9 +540,10 @@ endif
 #NETCDF=$(LIB_SEARCH_FLAG)$(PATH_QUOTE)$(NETCDF_DIR)/lib$(PATH_QUOTE) $(LIB_FLAG)$(NETCDF_NAME)
 ### FOR SEPERATE C AND FORTRAN NETCDF LIBRARIES ###
 NETCDF_NAMEF=$(NETCDF_NAME)f
-NETCDF= $(LIB_SEARCH_FLAG)$(PATH_QUOTE)$(NETCDF_DIR)/lib$(PATH_QUOTE) $(LIB_FLAG)$(NETCDF_NAME) $(LIB_FLAG)$(NETCDF_NAMEF)
+NETCDF_NAMEC=$(NETCDF_NAME)_c++
+NETCDF= $(LIB_SEARCH_FLAG)$(PATH_QUOTE)$(NETCDF_DIR)/lib$(PATH_QUOTE) $(LIB_FLAG)$(NETCDF_NAME) $(LIB_SEARCH_FLAG)$(PATH_QUOTE)$(NETCDFF_DIR)/lib$(PATH_QUOTE) $(LIB_FLAG)$(NETCDF_NAMEF) $(LIB_SEARCH_FLAG)$(PATH_QUOTE)$(NETCDFC_DIR)/lib$(PATH_QUOTE) $(LIB_FLAG)$(NETCDF_NAMEC)
 ###################################################
-NETCDF_INC=$(INC_FLAG)$(PATH_QUOTE)$(NETCDF_DIR)/include$(PATH_QUOTE)
+NETCDF_INC=$(INC_FLAG)$(PATH_QUOTE)$(NETCDF_DIR)/include$(PATH_QUOTE) $(INC_FLAG)$(PATH_QUOTE)$(NETCDFF_DIR)/include$(PATH_QUOTE) $(INC_FLAG)$(PATH_QUOTE)$(NETCDFC_DIR)/include$(PATH_QUOTE)
 ifeq ($(F77),f95)
   NETCDF_INC += $(MOD_INC_FLAG)$(PATH_QUOTE)$(NETCDF_DIR)/include$(PATH_QUOTE)
 endif

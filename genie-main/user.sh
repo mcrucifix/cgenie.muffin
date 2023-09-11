@@ -27,11 +27,12 @@
 # the command-line take precedence over changes made in this file.
 #
 # ---------------------------------------------------------------------
+HOMEDIR=/cofast/jgerard
 
-CODEDIR=~/cgenie.muffin
-OUTROOT=~/cgenie_output
-ARCHIVEDIR=~/cgenie_archive
-LOGDIR=~/cgenie_log
+CODEDIR=${HOMEDIR}/cgenie.muffin
+OUTROOT=${HOMEDIR}/cgenie_output
+ARCHIVEDIR=${HOMEDIR}/cgenie_archive
+LOGDIR=${HOMEDIR}/cgenie_log
 
 RUNTIME_ROOT=${RUNTIME_ROOT:=../../cgenie.muffin}
 RUNTIME_OUTDIR=${RUNTIME_OUTDIR:=.}

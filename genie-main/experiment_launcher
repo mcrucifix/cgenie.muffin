@@ -1,0 +1,12 @@
+./runmuffin.sh JG.DEVO_test DEVO_PERSO firstest.16X.PO4.Tdep_1.0PO4_1.0O2.SPIN 10000
+./runmuffin.sh JG.eb_go_gs_ac_bg_DEVO_415 DEVO_PERSO DEVO_415_01XCO2.01XPO4.Tdep.01XO2.SPIN 10000
+
+./runmuffin.sh cgenie.eb_go_gs_ac_bg.worjh2.BASES AMOC freshwater_flux_0.2Sv 10000 ULTIME_config
+./runmuffin.sh cgenie.eb_go_gs_ac_bg.worjh2.BASES AMOC freshwater_flux_0.2Sv_sal_cst 10000 ULTIME_config
+
+./runmuffin.sh cgenie.eb_go_gs_ac_bg.worjh2.BASES AMOC bifurcation_freshwater_flux_0.2Sv 20000 freshwater_flux_0.2Sv
+./runmuffin.sh cgenie.eb_go_gs_ac_bg.worjh2.BASES AMOC bifurcation_freshwater_flux_0.2Sv_sal_cst 20000 freshwater_flux_0.2Sv_sal_cst
+
+./runmuffin.sh cgenie.eb_go_gs_ac_bg.worjh2.BASES AMOC bifurcation_freshwater_flux_0.0Sv 20000 ULTIME_config
+./runmuffin.sh cgenie.eb_go_gs_ac_bg.worjh2.BASES AMOC bifurcation_freshwater_flux_0.0Sv_sal_cst 20000 ULTIME_config
+
