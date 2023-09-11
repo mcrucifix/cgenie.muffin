@@ -549,7 +549,8 @@ c
       if (debug_init) print*,'netCDF restart output ?'
       if (debug_init) print*,netout
       if ((netout.eq.'n').or.(netout.eq.'N')) then
-        lnetout=.false.
+        lnetout=.true.
+c lnetout=.false.     
       else
         lnetout=.true.
       endif

@@ -1,0 +1,10 @@
+OUTROOT=/globalscratch/users/j/g/jgerard/cgenie_output
+CODEDIR=/globalscratch/users/j/g/jgerard/cgenie.muffin
+RUNTIME_ROOT=../../cgenie.muffin
+RUNTIME_OUTDIR=.
+EXPID=JG.Vera393M.08X_1.25PO4_0.3O2.SPIN
+FIXEDATMOSFILE=data_fixedatmos
+GLIMMERFILE=data_glimmer.config
+igcm_module=genie-igcm
+BFGROOT=EMPTY
+MODULE_NAMES='embm goldstein goldsteinseaice biogem atchem '

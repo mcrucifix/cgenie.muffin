@@ -12,16 +12,16 @@ echo ""
 # CHANGE THIS FOR INSTALLATIONS OTHER THAN IN $HOME
 # SET THE SAME AS IN user.mak AND user.sh
 # set home directory
-HOMEDIR=$HOME
+HOMEDIR=/globalscratch/users/j/g/jgerard
 #####################################################################
 # set output directory
 OUTPUTDIR=$HOMEDIR/cgenie_output
 # ensure rocks can find xsltproc
-export PATH=$PATH:/opt/rocks/bin:/usr/bin
-export PATH=$PATH:/share/apps/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/share/apps/lib
+#export PATH=$PATH:/opt/rocks/bin:/usr/bin
+#export PATH=$PATH:/share/apps/bin
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/share/apps/lib
 # also ifort ...
-export PATH=/state/partition1/apps/intel/bin:$PATH
+#export PATH=/state/partition1/apps/intel/bin:$PATH
 # ensure stack size is adequate
 ulimit -s 20480
 #

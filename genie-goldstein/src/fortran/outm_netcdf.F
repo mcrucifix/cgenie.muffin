@@ -63,11 +63,12 @@ c AY (06/10/04) : extra variables for printing out average model properties
 
 c     output file format is yyyy_mm_dd
 c     30 day months are assumed
-      if (mod(yearlen,30.0).ne.0) then
-         print*, 'ERROR: Goldstein NetCDF restarts (outm_netdf):'
-         print*, '   mod(yearlen,30.0) must be zero'
-         stop
-      end if
+c     print*, 'yearlen is',yearlen,' goldstein'
+c     if (mod(yearlen,30.0).ne.0) then
+c        print*, 'ERROR: Goldstein NetCDF restarts (outm_netdf):'
+c        print*, '   mod(yearlen,30.0) must be zero'
+c        stop
+c     end if
 
       timestep=yearlen/real(nyear)
 

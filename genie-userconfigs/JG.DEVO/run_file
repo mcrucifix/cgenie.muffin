@@ -1,0 +1,9 @@
+# Run a test file to compile the model
+
+ 	./runmuffin.sh muffin.JG.Scot360M.eb_go_gs_ac_bg JG.DEVO test.SPIN 10
+
+# Run the main config simulations
+
+	./runmuffin.sh muffin.JG.Scot360M.eb_go_gs_ac_bg JG.DEVO JG.Scot360M.main_config.SPIN 20000
+
+
