@@ -1,5 +1,5 @@
 # *******************************************************************
-# *** USERCONFIG for JG.Scot410M.compilation ************************
+# *** USERCONFIG for JG.Scot410M.main_config ************************
 # *******************************************************************
 #
 # *** CLIMATE *******************************************************
@@ -98,7 +98,7 @@ gm_par_carbchem_Tmax = 45.0
 #
 # Orbital parameters -- modern set => adjust as necessary
 ea_par_orbit_osce=0.0 # eccentricity
-ea_par_orbit_oscsob=0.3746066 # sine of obliquity
+ea_par_orbit_oscsob=0.3907311 # sine of obliquity
 ea_par_orbit_oscgam=0 # longitude of perihelion
 #
 # *******************************************************************

@@ -1,0 +1,3 @@
+# The command to run the compilation for Scot390M
+
+	./runmuffin.sh muffin.JG.Scot390M.eb_go_gs_ac_bg JG.DEVO/Scot390M_AF_rest JG.Scot390M_AF_rest.compilation 10

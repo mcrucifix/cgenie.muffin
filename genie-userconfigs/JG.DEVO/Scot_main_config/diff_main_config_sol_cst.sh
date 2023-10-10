@@ -1,0 +1,11 @@
+diff JG.Scot360M.main_config.sol_cst.SPIN JG.Scot365M.main_config.sol_cst.SPIN
+diff JG.Scot360M.main_config.sol_cst.SPIN JG.Scot370M.main_config.sol_cst.SPIN
+diff JG.Scot360M.main_config.sol_cst.SPIN JG.Scot375M.main_config.sol_cst.SPIN
+diff JG.Scot360M.main_config.sol_cst.SPIN JG.Scot380M.main_config.sol_cst.SPIN
+diff JG.Scot360M.main_config.sol_cst.SPIN JG.Scot385M.main_config.sol_cst.SPIN
+diff JG.Scot360M.main_config.sol_cst.SPIN JG.Scot395M.main_config.sol_cst.SPIN
+diff JG.Scot360M.main_config.sol_cst.SPIN JG.Scot400M.main_config.sol_cst.SPIN
+diff JG.Scot360M.main_config.sol_cst.SPIN JG.Scot405M.main_config.sol_cst.SPIN
+diff JG.Scot360M.main_config.sol_cst.SPIN JG.Scot410M.main_config.sol_cst.SPIN
+diff JG.Scot360M.main_config.sol_cst.SPIN JG.Scot415M.main_config.sol_cst.SPIN
+diff JG.Scot360M.main_config.sol_cst.SPIN JG.Scot420M.main_config.sol_cst.SPIN

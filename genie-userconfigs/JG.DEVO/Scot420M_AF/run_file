@@ -1,0 +1,3 @@
+# The command to run the compilation for Scot420M
+
+	./runmuffin.sh muffin.JG.Scot420M.eb_go_gs_ac_bg JG.DEVO/Scot420M_AF JG.Scot420M.compilation 10
