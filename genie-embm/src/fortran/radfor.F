@@ -4,31 +4,6 @@ c loosely based on Peter Cox's SUNNY.f or see Peixoto and Oort 1992 p.99
 c
 c nyear = no. dt per year
 c osct  = angular time of year (0,..,2pi)
-<<<<<<< HEAD
-c oscsind = sin of declination (not an input)
-c oscsob = sin of obliquity (input)
-c osce = eccentricity (input)
-c oscgam = mean longitude of perihelion, counted in heliocentric
-c          coordinnates, after passage at vernal point
-c          vernal point is set to occur at fall equinoxe 
-c          that is, by definition, spring equinox has Earth longitude 180d 
-c          (after Berger 1978)
-c          spring equinox set to occur on day 80 of the year
-c          In the user config file, oscgam is specified in degrees
-c          In this routine, it is converted in radians
-
-c  zw  = angle between gamma and perihelion
-c  zw1 = angle between spring equi and per
-c  zv  = true anomaly of spring equi
-c  zm  = mean anomaly of spring equinoxe
-c  osct = mean anomaly  at time step
-c  oscv = true anomaly  at time step
-c  osctau0 : time of perihelion since vernal equinox
-c  osctau1 : time of perihelion since 1st january
-c  oscday = 0.5 * sunlit (angular) fraction of day, ie 1/2 length of day
-c  solfor = solar forcing = scaling factor * integral of cosine of solar 
-c                           elevation during daylight
-=======
 c oscsind = sin of declination
 c oscday = 0.5 * sunlit (angular) fraction of day, ie 1/2 length of day
 c solfor = solar forcing = scaling factor * integral of cosine of solar 
@@ -47,7 +22,6 @@ c NOTE: the new orbits code contains (1) corrections for osce4 used to
 c       calculate the insolation as a function of ecc, corrections for 
 c      (2) calculation of solar declination, and for (3) applying
 c      consistency between fixed and time-varying orbits
->>>>>>> v0.9.50
 
       subroutine radfor (iistep,gn_daysperyear,solconst,flag_ents)
 
@@ -88,59 +62,27 @@ c >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 		 
       osce=par_orbit_osce
       oscsob=par_orbit_oscsob
-      osctau0=par_orbit_osctau0                    ! discarded !!!!! 
+      osctau0=par_orbit_osctau0
+      zw=par_orbit_oscgam
 
-      rpi = 1.0/pi          ! moved from below by MC
-
-c     since there seems to be much ambiguity in the user config files
-c     let's decide once and for all: oscgam will be in degrees
-c     with the convention that oscgam = 0 is perihelie at autumn equinox
-c     the most widesperad convention
-
-      oscgam = mod(par_orbit_oscgam , 360.)  * pi / 180. 
-
-c compute true and mean anomaly of spring equinox 
-
-c mc : moved from below as already used to compute zm
-      tv = osce*osce
-      osce1 = osce * (2.0 - 0.25*tv)
-      osce2 = 1.25 * tv 
-      osce3 = osce*tv * 13./12.
-      osce4 = ((1.0  )/(1.0 - tv))**2 
-c           osce4 = ((1.0 - 0.5 *tv) / (1.0 - tv ) **2
-c            was used until commit 13b3f00 at wich point UCLouvain
-c           branched off, but this seems wrong to me
-c           and causes excessive insolation when eccentricity increases
-      oscryr = 2.0*pi/float(nyear)
-
-c      if (zw.eq.99999) then
-c      oscgam=1.352631
-
-      zw = oscgam
-      zw1= mod( pi + zw, 2 * pi )
-      zv=( ( 2. * pi) -zw1 ) 
-
-
-!     zm = zv - 2 * ((osce/2 + (osce * osce * osce) /8) *
-!    :    (1 + (sqrt ( 1 - osce * osce ))) * sin(zv) - 
-!    :  (osce * osce)/4 * (0.5 + (sqrt ( 1 - osce * osce ))) 
-!    :  * sin(2 * zv) + (osce * osce * osce) /8 * (1/3 + 
-!    :    (sqrt ( 1 - osce * osce ))) * 
-!    :    sin(3 * zv))
-!      write (*,*) 'zm computed berger way =',zm
-!      the above lines are commented out but have been used to check 
-!      consistency with Berger's routines (mcr)
-
+c skt calculate oscgam (mean longitude) from par_orbit_oscgam                                                                            
+      if (zw.eq.99999) then
+      oscgam=1.352631
+      else
+      zw1=180.+zw
+      if (zw1.gt.360.0) then
+      zw1=zw1-360.0
+      end if
+      zv=pi/180.*(360.-zw1)
+      zm=zv
       do i=1,10
-        zm=zv - osce1 * sin(zm)- osce2 * sin(2.*zm) - osce3 * sin(3.*zm)
+         zm=zv
+     :      - (2.0*osce - 0.25*osce*osce*osce)
+     :      *sin(zm)- 1.25*osce*osce*sin(2.*zm)
+     :      - 13./12.*osce*osce*osce*sin(3.*zm)
       enddo
-
-!     write (*,*) 'zm computed his way =',zm
-
-!      oscgam=0.5*(zv+zm)     ! COMMENTED OUT BY mcr.
-!                             ! not sure who did this. Overwritten
-!                             ! oscgam was used below to compute Sun
-!                             ! declination
+      oscgam=0.5*(zv+zm)
+      end if
 
 c pbh this if statement removed so that transient orbital forcing can be used without ents
 c      if ((ents_radfor.eq.'y').or.(ents_radfor.eq.'Y')) then
@@ -227,41 +169,31 @@ c SG < end of orbit modifications
 
 c     open(1,file='oscsun.dat')
 
-c pbh
-c mcr
-!     tau0 is mean anomaly (degrees) of spring equinox
-!     tau1 is mean anomaly of start of year (80 mean days befaure the
-!     spring equinox) 
+      rpi = 1.0/pi
 
-      osctau0 = -zm * 180. * rpi 
-      osctau1 = osctau0 + 0.5 + 80.
+      tv = osce*osce
+      osce1 = osce * (2.0 - 0.25*tv)
+      osce2 = 1.25 * tv 
+      osce3 = osce*tv * 13./12.
+      osce4 = ((1.0 + 0.5*tv)/(1.0 - tv))**2 
+      oscryr = 2.0*pi/float(nyear)
+
+c pbh
+      osctau1 = osctau0 + 0.5
  
       do istep=1,nyear
 
 c pbh Dan's offset for angular time of year
-c        osct = float(mod(istep-1,nyear)+1)*oscryr - zm
+c         osct = float(mod(istep-1,nyear)+1)*oscryr
          osct = (float(mod(istep-1,nyear)+1) - 
      &          (nyear*osctau1/gn_daysperyear))*oscryr
 
-! DO LOOP MOVED BELOW BY MC
-c
-         oscv = osct + osce1*sin(osct) + osce2*sin(2.0*osct) 
+         do j=1,jmax
+            oscv = osct + osce1*sin(osct) + osce2*sin(2.0*osct) 
      &           + osce3*sin(3.0*osct)
-         oscsolf = osce4*(1.0 + osce*cos(oscv))**2
+            oscsolf = osce4*(1.0 + osce*cos(oscv))**2
+            oscsind = oscsob*sin(oscv-oscgam)
 
-c           oscsind = sin obl * sin ( longitude earth ) = 
-c                     mean anomaly - mean anomaly of vernal point
-
-c           oscsolf = 1.0 / ((1.0-osce*osce)/(1.0 + osce*cos(oscv)))**2
-         oscsind = oscsob*sin(oscv-zv)      ! changed oscgam into zv
-
-c           in the previous code oscgam was "re-set" to zm+zv/2
-c           that is, the average between the mean and the true anomaly
-c           of the gamma point, which I don't understand the rational of
-
-
-
-         do j=1,jmax                           ! MOVED FROM ABOVE BY MC
             oscss = oscsind * s(j)
             osccc = sqrt(1.0 - oscsind**2) * c(j)
             osctt = min(1.0,max(-1.0,oscss/osccc))
@@ -373,7 +305,8 @@ c PV (05/10/2022) convert mean longitude from radians to days (days between peri
       dn = oscgam*gn_daysperyear/(2*pi)
 c PV (05/10/2022) cGENIE starts at Jan 1st, not the vernal equinox on March 21, so substract 79.265 days 
 c from dn so that the first timestep always occurs ~80 days from the vernal equinox
-      dn = dn - 79.265
+c JG (11/03/2024) to match the convention taken by MC a value of 82.625 is needed.
+      dn = dn - 82.625
 c PV (05/10/2022) calculate the date of perihelion from Jan. 1st and make sure the days fall 
 c within the 0-365.25 day range
       osctau0 = -dn
