@@ -12,7 +12,7 @@ echo ""
 # CHANGE THIS FOR INSTALLATIONS OTHER THAN IN $HOME
 # SET THE SAME AS IN user.mak AND user.sh
 # set home directory
-HOMEDIR=/cofast/jgerard/TEST_DEV_Uclouvain
+HOMEDIR=/cofast/jgerard
 #####################################################################
 # set output directory
 OUTPUTDIR=$HOMEDIR/cgenie_output

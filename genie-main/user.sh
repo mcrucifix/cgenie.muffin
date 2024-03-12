@@ -28,7 +28,7 @@
 #
 # ---------------------------------------------------------------------
 
-HOMEDIR=/cofast/jgerard/TEST_DEV_Uclouvain
+HOMEDIR=/cofast/jgerard
 
 CODEDIR=${HOMEDIR}/cgenie.muffin
 OUTROOT=${HOMEDIR}/cgenie_output
