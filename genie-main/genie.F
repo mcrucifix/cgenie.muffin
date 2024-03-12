@@ -261,7 +261,7 @@ c     ******************************************************************
          endif
 c     ******************************************************************
 c     
-      write (*,*) "ICI2"
+c     write (*,*) "ICI2" commented by JG
 c     test for being within 1st part of cycle
          if((istep_gem.le.gem_notyr).or.(.not.flag_gemlite)) then
 c     $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -397,7 +397,7 @@ c     *** PLASIM atmosphere model
                endif
             endif
 c     $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-      write (*,*) "ICI3"
+c     write (*,*) "ICI3" commented by JG
 c     *** c-GOLDSTEIN sea-ice model
             if (flag_goldsteinseaice) then
                if(mod(koverall,ksic_loop).eq.0) then
